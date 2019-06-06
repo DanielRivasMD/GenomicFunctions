@@ -1,45 +1,41 @@
 
-#unique_coor
-#' @title
-#'
+#' @title unique_coor
 #'
 #' @description
+#' \emph{unique_coor} takes two data.frames with start (first column) and end (second column) coordinates, and finds unique positions.
+#' \emph{d_genomic} option ( default = \emph{FALSE} ) if non-genomic coordinates, otherwise chromosome information must be entered in column 3.
+#' requires \strong{GenomicRanges} (built-in).
 #'
+#' @param f_query data.frame interpreted as query with specified format
+#' @param f_subj data.frame interpreted as subject with specified format
+#' @param query names to assign to query on output
+#' @param subj names to assign to subject on output
+#' @param d_genomic boolean as to interpret third column as chromosome
 #'
-#' @section Warning:
-#'
-#'
-#' @param f_query
-#'
-#' @param f_subj
-#'
-#' @param query
-#'
-#' @param subj
-#'
-#' @param f_genomic
-#'
-#' @return
+#' @return outputs a list of query and subject locations.
+#' @seealso \code{\link{shared_coor}}
 #'
 #' @export
-#' @source
-#'
-#' @examples
-#'
 
-unique_coor <- function(f_query, f_subj, query, subj, f_genomic=F){
+unique_coor <- function(
 
-	if(f_genomic==F){
+	f_query,
+	f_subj,
+	query,
+	subj,
+	d_genomic = F
+) {
 
-		# require(IRanges)
-		f_query_ranges <- IRanges::IRanges(start=f_query[, 1], end=f_query[, 2])
-		f_subj_ranges <- IRanges::IRanges(start=f_subj[, 1], end=f_subj[, 2])
+	if ( d_genomic == F ) {
+		#
+		f_query_ranges <- IRanges::IRanges(start = f_query[, 1], end = f_query[, 2])
+		f_subj_ranges <- IRanges::IRanges(start = f_subj[, 1], end = f_subj[, 2])
 	}else{
-
-		# require(GenomicRanges)
-		f_query_ranges <- GenomicRanges::GRanges(seqnames=f_query[, 3], IRanges(start=f_query[, 1], end=f_query[, 2]))
-		f_subj_ranges <- GenomicRanges::GRanges(seqnames=f_subj[, 3], IRanges(start=f_subj[, 1], end=f_subj[, 2]))
+		#
+		f_query_ranges <- GenomicRanges::GRanges(seqnames = f_query[, 3], IRanges(start = f_query[, 1], end = f_query[, 2]))
+		f_subj_ranges <- GenomicRanges::GRanges(seqnames = f_subj[, 3], IRanges(start = f_subj[, 1], end = f_subj[, 2]))
 	}
+
 	f_query_subj <- as.data.frame(IRanges::findOverlaps(f_query_ranges, f_subj_ranges))
 	colnames(f_query_subj) <- c(query, subj)
 	f_query_match <- match(seq_along(f_query_ranges), f_query_subj[, query])
@@ -48,10 +44,6 @@ unique_coor <- function(f_query, f_subj, query, subj, f_genomic=F){
 	unique_pos_subj <- f_subj[which(is.na(f_subj_match)), ]
 	unique_pos_ls <- list(unique_pos_query, unique_pos_subj)
 	names(unique_pos_ls) <- c(query, subj)
-	return(unique_pos_ls)
 
-	# unique_coor takes two data.frames with start (first column) and end (second column) coordinates, and finds unique positions.
-	# f_genomic option F if non-genomic coordinates, otherwise chromosome information must be entered in column 3.
-	# requires GRanges (built-in).
-	# outputs a list of query and subject locations.
+	return(unique_pos_ls)
 }
