@@ -13,7 +13,15 @@
 #' @param d_genomic boolean as to interpret third column as chromosome
 #'
 #' @return outputs a list of query and subject locations.
+#'
 #' @seealso \code{\link{shared_coor}}
+#' @seealso \code{\link{GenomicRanges::GRanges}}
+#' @seealso \code{\link{IRanges::IRanges}}
+#' @seealso \code{\link{IRanges::findOverlaps}}
+#'
+#' @importFrom GenomicRanges GRanges
+#' @importFrom IRanges IRanges
+#' @importFrom IRanges findOverlaps
 #'
 #' @export
 
@@ -23,10 +31,10 @@ unique_coor <- function(
 	f_subj,
 	query,
 	subj,
-	d_genomic = F
+	d_genomic = FALSE
 ) {
 
-	if ( d_genomic == F ) {
+	if ( d_genomic == FALSE ) {
 		#
 		f_query_ranges <- IRanges::IRanges(start = f_query[, 1], end = f_query[, 2])
 		f_subj_ranges <- IRanges::IRanges(start = f_subj[, 1], end = f_subj[, 2])
