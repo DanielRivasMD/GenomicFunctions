@@ -2,10 +2,7 @@
 % Please edit documentation in R/peak_iden_seq.R
 \name{peak_iden_seq}
 \alias{peak_iden_seq}
-\title{Peak Sequence Identifier}
-\source{
-
-}
+\title{peak_iden_seq}
 \usage{
 peak_iden_seq(f_seq, f_threshold = NULL, f_bin_size = NULL,
   f_bin_overlaps = NULL)
@@ -23,14 +20,11 @@ peak_iden_seq(f_seq, f_threshold = NULL, f_bin_size = NULL,
 Returns a data.frame with following columns: "peak_no", "seq_max", "seq_min", "seq_mean", "seq_sum", "lower_lim_ix", "upper_lim_ix", "peak_length_ix", "peak_length_nt"
 }
 \description{
-Identifies peaks in a vector of number above a defined threshold 'f_threshold'. Additionally, calculates min, mean, sum and coordinates in indixes (ix) and nucleotides (nt) given 'f_bin_size' and 'f_bin_overlaps' assuming it is dealing with overlaping windows.
+Identifies peaks in a vector of number above a defined threshold \emph{'f_threshold'}.
+Additionally, calculates \emph{'min'}, \emph{'mean'}, \emph{'sum'} and coordinates in indixes (ix) and nucleotides (nt) given \emph{'f_bin_size'} and \emph{'f_bin_overlaps'} assuming it is dealing with overlaping windows.
 }
-\section{Warning}{
-
-}
-
 \examples{
-x <- sample(0:5, 100, replace=T, prob = c(5, rep(1, 5)))
+x <- sample(0:5, 100, replace = T, prob = c(5, rep(1, 5)))
 peak_iden_seq(
 x,
 f_threshold = 1,
