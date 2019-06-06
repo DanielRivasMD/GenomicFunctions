@@ -2,34 +2,29 @@
 % Please edit documentation in R/shared_coor.R
 \name{shared_coor}
 \alias{shared_coor}
-\title{}
-\source{
-
-}
+\title{shared_coor}
 \usage{
-shared_coor(f_query, f_subj, query, subj, f_genomic = F)
+shared_coor(f_query, f_subj, query, subj, d_genomic = F)
 }
 \arguments{
-\item{f_query}{}
+\item{f_query}{data.frame interpreted as query with specified format}
 
-\item{f_subj}{}
+\item{f_subj}{data.frame interpreted as subject with specified format}
 
-\item{query}{}
+\item{query}{names to assign to query on output}
 
-\item{subj}{}
+\item{subj}{names to assign to subject on output}
 
-\item{f_genomic}{}
+\item{d_genomic}{boolean as to interpret third column as chromosome}
 }
 \value{
-
+outputs a list of query and subject locations.
 }
 \description{
-
+\emph{shared_coor} takes two data.frames with start (first column) and end (second column) coordinates, and finds overlaps.
+\emph{d_genomic} option ( default = \emph{FALSE} ) if non-genomic coordinates, otherwise chromosome information must be entered in column 3.
+requires \strong{GenomicRanges} (built-in).
 }
-\section{Warning}{
-
-}
-
-\examples{
-
+\seealso{
+\code{\link{unique_coor}}
 }
