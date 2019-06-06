@@ -3,6 +3,7 @@
 export(concat_ls)
 export(coor_seq)
 export(dec_tag)
+export(locus_diff)
 export(most_comn)
 export(peak_iden)
 export(rounder)
