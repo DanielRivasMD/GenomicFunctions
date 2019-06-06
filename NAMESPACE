@@ -3,3 +3,4 @@
 export(coor_seq)
 export(peak_iden)
 export(rounder)
+export(slid_win)
