@@ -4,31 +4,44 @@
 \alias{peak_iden_seq}
 \title{peak_iden_seq}
 \usage{
-peak_iden_seq(f_seq, d_threshold = NULL, f_bin_size = NULL,
-  f_bin_overlaps = NULL)
+peak_iden_seq(f_seq, d_threshold = NULL, d_bin_size = NULL,
+  d_bin_overlaps = NULL)
 }
 \arguments{
 \item{f_seq}{Vector of numbers}
 
 \item{d_threshold}{Threshold for peak identification. Default = 1}
 
-\item{f_bin_size}{Defines bin size assuming f_seq is a vector of sliding windows. Default = 'bin_size'}
+\item{d_bin_size}{Defines bin size assuming \emph{f_seq} is a vector of sliding windows. Default = \emph{bin_size}}
 
-\item{f_bin_overlaps}{Defines bin overlaps assuming f_seq is a vector of sliding windows. Default = 'bin_overlaps'}
+\item{d_bin_overlaps}{Defines bin overlaps assuming \emph{f_seq} is a vector of sliding windows. Default = \emph{bin_overlaps}}
 }
 \value{
-Returns a data.frame with following columns: "peak_no", "seq_max", "seq_min", "seq_mean", "seq_sum", "lower_lim_ix", "upper_lim_ix", "peak_length_ix", "peak_length_nt"
+Returns a data.frame with following columns: \enumerate{
+\item peak_no
+\item seq_max
+\item seq_min
+\item seq_mean
+\item seq_sum
+\item lower_lim_ix
+\item upper_lim_ix
+\item peak_length_ix
+\item peak_length_nt
+}
 }
 \description{
 Identifies peaks in a vector of number above a defined threshold \emph{'d_threshold'}.
-Additionally, calculates \emph{'min'}, \emph{'mean'}, \emph{'sum'} and coordinates in indixes (ix) and nucleotides (nt) given \emph{'f_bin_size'} and \emph{'f_bin_overlaps'} assuming it is dealing with overlaping windows.
+Additionally, calculates \emph{'min'}, \emph{'mean'}, \emph{'sum'} and coordinates in indixes (ix) and nucleotides (nt) given \emph{'d_bin_size'} and \emph{'d_bin_overlaps'} assuming it is dealing with overlaping windows.
 }
 \examples{
 x <- sample(0:5, 100, replace = T, prob = c(5, rep(1, 5)))
 peak_iden_seq(
 x,
 d_threshold = 1,
-f_bin_size = 10,
-f_bin_overlaps = 1
+d_bin_size = 10,
+d_bin_overlaps = 1
 )
+}
+\seealso{
+\code{\link{peak_iden}}
 }

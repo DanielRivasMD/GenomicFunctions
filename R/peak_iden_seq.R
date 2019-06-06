@@ -3,36 +3,47 @@
 #'
 #' @description
 #' Identifies peaks in a vector of number above a defined threshold \emph{'d_threshold'}.
-#' Additionally, calculates \emph{'min'}, \emph{'mean'}, \emph{'sum'} and coordinates in indixes (ix) and nucleotides (nt) given \emph{'f_bin_size'} and \emph{'f_bin_overlaps'} assuming it is dealing with overlaping windows.
+#' Additionally, calculates \emph{'min'}, \emph{'mean'}, \emph{'sum'} and coordinates in indixes (ix) and nucleotides (nt) given \emph{'d_bin_size'} and \emph{'d_bin_overlaps'} assuming it is dealing with overlaping windows.
 #'
 #' @param f_seq Vector of numbers
 #' @param d_threshold Threshold for peak identification. Default = 1
-#' @param f_bin_size Defines bin size assuming f_seq is a vector of sliding windows. Default = 'bin_size'
-#' @param f_bin_overlaps Defines bin overlaps assuming f_seq is a vector of sliding windows. Default = 'bin_overlaps'
+#' @param d_bin_size Defines bin size assuming \emph{f_seq} is a vector of sliding windows. Default = \emph{bin_size}
+#' @param d_bin_overlaps Defines bin overlaps assuming \emph{f_seq} is a vector of sliding windows. Default = \emph{bin_overlaps}
 #'
-#' @return Returns a data.frame with following columns: "peak_no", "seq_max", "seq_min", "seq_mean", "seq_sum", "lower_lim_ix", "upper_lim_ix", "peak_length_ix", "peak_length_nt"
-#' @export
+#' @return Returns a data.frame with following columns: \enumerate{
+#' \item peak_no
+#' \item seq_max
+#' \item seq_min
+#' \item seq_mean
+#' \item seq_sum
+#' \item lower_lim_ix
+#' \item upper_lim_ix
+#' \item peak_length_ix
+#' \item peak_length_nt
+#' }
 #'
+#' @seealso \code{\link{peak_iden}}
 #' @examples
 #' x <- sample(0:5, 100, replace = T, prob = c(5, rep(1, 5)))
 #' peak_iden_seq(
 #'	x,
 #'	d_threshold = 1,
-#'	f_bin_size = 10,
-#'	f_bin_overlaps = 1
+#'	d_bin_size = 10,
+#'	d_bin_overlaps = 1
 #' )
+#' @export
 
 peak_iden_seq <- function(
 
 	f_seq,
 	d_threshold = NULL,
-	f_bin_size = NULL,
-	f_bin_overlaps = NULL
+	d_bin_size = NULL,
+	d_bin_overlaps = NULL
 ) {
 
 	if ( is.null(d_threshold) ) d_threshold = 1
-	if ( is.null(f_bin_size) ) f_bin_size = bin_size
-	if ( is.null(f_bin_overlaps) ) f_bin_overlaps = bin_overlaps
+	if ( is.null(d_bin_size) ) d_bin_size = bin_size
+	if ( is.null(d_bin_overlaps) ) d_bin_overlaps = bin_overlaps
 
 	f_seq_df <- data.frame(seq_max = f_seq, peak_no = NA)
 	f_seq <- c(0, f_seq, 0)
@@ -60,7 +71,7 @@ peak_iden_seq <- function(
 	peak_feat$lower_lim_ix <- f_lower_lim_ix
 	peak_feat$upper_lim_ix <- f_upper_lim_ix
 	peak_feat$peak_length_ix <- f_peak_length
-	peak_feat$peak_length_nt <- (f_peak_length-f_bin_overlaps) * (f_bin_size / f_bin_overlaps) + (f_bin_size / f_bin_overlaps)
+	peak_feat$peak_length_nt <- (f_peak_length-d_bin_overlaps) * (d_bin_size / d_bin_overlaps) + (d_bin_size / d_bin_overlaps)
 
 	return(peak_feat)
 }
