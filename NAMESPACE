@@ -2,6 +2,7 @@
 
 export(concat_ls)
 export(coor_seq)
+export(dec_tag)
 export(peak_iden)
 export(rounder)
 export(slid_win)
