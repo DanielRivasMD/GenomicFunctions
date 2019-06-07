@@ -2,30 +2,25 @@
 % Please edit documentation in R/locus_diff.R
 \name{locus_diff}
 \alias{locus_diff}
-\title{}
-\source{
-
-}
+\title{locus_diff}
 \usage{
 locus_diff(f_x, f_y, f_data)
 }
 \arguments{
-\item{f_x}{}
+\item{f_x}{f_x}
 
-\item{f_y}{}
+\item{f_y}{f_y}
 
-\item{f_data}{}
+\item{f_data}{f_data}
 }
 \value{
-
+return
 }
 \description{
-
+\emph{locus_diff}
 }
-\section{Warning}{
+\seealso{
+\code{\link{peak_diff}}
 
-}
-
-\examples{
-
+\code{\link{h_clust}}
 }
