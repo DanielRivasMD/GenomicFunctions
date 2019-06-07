@@ -3,27 +3,20 @@
 \name{slid_win}
 \alias{slid_win}
 \title{Window Slider}
-\source{
-
-}
 \usage{
-slid_win(f_seq, f_bin_size = bin_size)
+slid_win(f_seq, d_bin_size = 500)
 }
 \arguments{
-\item{f_seq}{Vector of numbers}
+\item{f_seq}{Numerical vector}
 
-\item{f_bin_size}{Bin size}
+\item{d_bin_size}{Bin size. \strong{Default = 500}}
 }
 \value{
-Returns a vector of numbers
+Numerical vector
 }
 \description{
-Takes in a vector of numbers 'f_seq' and outputs its positions assuming 'f_bin_size'
+Takes in a vector of numbers \emph{'f_seq'} and outputs its positions assuming \emph{'d_bin_size'}
 }
-\section{Warning}{
-
-}
-
 \examples{
 slid_win(37, 5)
 slid_win(1:100, 15)

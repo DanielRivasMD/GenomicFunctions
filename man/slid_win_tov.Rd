@@ -2,37 +2,31 @@
 % Please edit documentation in R/slid_win_tov.R
 \name{slid_win_tov}
 \alias{slid_win_tov}
-\title{Window Slider with Overlaps}
-\source{
-
-}
+\title{Window Slider with Table Overlaps}
 \usage{
-slid_win_tov(f_seqs, f_bin_size = bin_size,
-  f_bin_overlap = bin_overlaps)
+slid_win_tov(f_seq, d_bin_size = 500, d_bin_overlap = 10)
 }
 \arguments{
-\item{f_bin_size}{Bin size}
+\item{f_seq}{Numerical vector}
 
-\item{f_bin_overlap}{Bin overlap}
+\item{d_bin_size}{Bin size. \strong{Default = 500}}
 
-\item{f_seq}{Vector of numbers}
+\item{d_bin_overlap}{Bin overlap. \strong{Default = 10}}
 }
 \value{
-Returns a table with overlap indexes
+Table with overlap indexes
 }
 \description{
-Takes in a vector of numbers 'f_seqs' and outputs their positions assuming 'f_bin_size' and 'f_bin_overlap'
+Takes in a numerical vector \emph{'f_seqs'} and outputs their positions assuming \emph{'d_bin_size'} and \emph{'d_bin_overlap'}
 }
 \section{Warning}{
 
-'slid_win_ov' uses 'slid_win' to determine the window sliding
-}
-
-\section{See also}{
-
-'slid_win'
+\emph{'slid_win_ov'} uses \emph{'slid_win'} to determine the window sliding
 }
 
 \examples{
 slid_win_tov(1:100, 25, 5)
+}
+\seealso{
+\code{\link{slid_win}}
 }

@@ -1,28 +1,24 @@
 
-#slid_win
-#' @title
-#' Window Slider
+#' @title Window Slider
 #'
 #' @description
-#' Takes in a vector of numbers 'f_seq' and outputs its positions assuming 'f_bin_size'
+#' Takes in a vector of numbers \emph{'f_seq'} and outputs its positions assuming \emph{'d_bin_size'}
 #'
-#' @section Warning:
+#' @param f_seq Numerical vector
+#' @param d_bin_size Bin size. \strong{Default = 500}
 #'
-#'
-#' @param f_seq
-#' Vector of numbers
-#' @param f_bin_size
-#' Bin size
-#' @return
-#' Returns a vector of numbers
-#' @export
-#' @source
+#' @return Numerical vector
 #'
 #' @examples
 #' slid_win(37, 5)
 #' slid_win(1:100, 15)
+#' @export
 
-slid_win <- function(f_seq, f_bin_size=bin_size){
+slid_win <- function(
 
-	return(ceiling(((f_seq)-(f_bin_size/2))/f_bin_size)*f_bin_size)
+	f_seq,
+	d_bin_size = 500
+) {
+
+	return(ceiling(((f_seq) - (d_bin_size / 2)) / d_bin_size) * d_bin_size)
 }
