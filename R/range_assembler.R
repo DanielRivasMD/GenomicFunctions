@@ -4,11 +4,7 @@
 #' @description
 #' Wrapper to create GenomicRanges objects in one line
 #'
-#' @param f_data data.frame to be transform. Must be formated as follows \enumarate{
-#' item \emph{seqnames}
-#' item \emph{ranges start}
-#' item \emph{ranges end}
-#' }
+#' @param f_data data.frame to be transform. Must be formated as: ranges start, ranges end and seqnames
 #' @param d_genom boolean to set if chromosome values are set. \strong{Default = FALSE}
 #'
 #' @return GenomicRanges object
@@ -26,7 +22,7 @@ range_assembler <- function(
 
 	f_data <- as.data.frame(f_data)
 	if ( d_genom == TRUE ) {
-		f_out <- ranges = IRanges::IRanges(
+		f_out <- IRanges::IRanges(
 			start = f_data[, 1],
 			end = f_data[, 2]
 		)

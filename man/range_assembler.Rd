@@ -7,11 +7,7 @@
 range_assembler(f_data, d_genom = FALSE)
 }
 \arguments{
-\item{f_data}{data.frame to be transform. Must be formated as follows \enumarate{
-item \emph{seqnames}
-item \emph{ranges start}
-item \emph{ranges end}
-}}
+\item{f_data}{data.frame to be transform. Must be formated as: ranges start, ranges end and seqnames}
 
 \item{d_genom}{boolean to set if chromosome values are set. \strong{Default = FALSE}}
 }
