@@ -3,9 +3,6 @@
 \name{coor_seq}
 \alias{coor_seq}
 \title{Coordinate Sequencer}
-\source{
-
-}
 \usage{
 coor_seq(f_start_coor, f_end_coor)
 }
@@ -15,17 +12,13 @@ coor_seq(f_start_coor, f_end_coor)
 \item{f_end_coor}{Vector of end coordinates}
 }
 \value{
-Returns a vector sequence of concatenated integers in the same order as the coordinates
+Vector sequence of concatenated integers in the same order as the coordinates
 }
 \description{
 Generates a vector given a vector of start coordinates 'f_start_coor' and a vector of end coordinates 'f_end_coor'
 }
-\section{Warning}{
-
-}
-
 \examples{
 x <- sample(1:100, 10)
-y <- x + sample(1:10, 10, replace = T)
+y <- x + sample(1:10, 10, replace = TRUE)
 coor_seq(x, y)
 }
