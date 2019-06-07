@@ -1,25 +1,19 @@
 
-#dup_finder
-#' @title
-#'
+#' @title dup_finder
 #'
 #' @description
+#' \emph{dup_finder}
 #'
+#' @param f_vec vector
 #'
-#' @section Warning:
-#'
-#'
-#' @param f_vec
-#'
-#' @return
+#' @return return
 #'
 #' @export
-#' @source
-#'
-#' @examples
-#'
 
-dup_finder <- function(f_vec){
+dup_finder <- function(
+
+	f_vec
+) {
 
 	return(duplicated(f_vec) | duplicated(f_vec, fromLast = TRUE))
 }
