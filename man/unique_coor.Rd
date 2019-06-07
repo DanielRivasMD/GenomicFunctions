@@ -2,23 +2,23 @@
 % Please edit documentation in R/unique_coor.R
 \name{unique_coor}
 \alias{unique_coor}
-\title{unique_coor}
+\title{Unique Coordinate}
 \usage{
-unique_coor(f_query, f_subj, query, subj, d_genomic = F)
+unique_coor(f_query, f_subj, query, subj, d_genomic = FALSE)
 }
 \arguments{
 \item{f_query}{data.frame interpreted as query with specified format}
 
 \item{f_subj}{data.frame interpreted as subject with specified format}
 
-\item{query}{names to assign to query on output}
+\item{query}{Names to assign to query on output}
 
-\item{subj}{names to assign to subject on output}
+\item{subj}{Names to assign to subject on output}
 
 \item{d_genomic}{boolean as to interpret third column as chromosome}
 }
 \value{
-outputs a list of query and subject locations.
+List of query and subject locations.
 }
 \description{
 \emph{unique_coor} takes two data.frames with start (first column) and end (second column) coordinates, and finds unique positions.

@@ -1,5 +1,5 @@
 
-#' @title unique_coor
+#' @title Unique Coordinate
 #'
 #' @description
 #' \emph{unique_coor} takes two data.frames with start (first column) and end (second column) coordinates, and finds unique positions.
@@ -8,20 +8,13 @@
 #'
 #' @param f_query data.frame interpreted as query with specified format
 #' @param f_subj data.frame interpreted as subject with specified format
-#' @param query names to assign to query on output
-#' @param subj names to assign to subject on output
+#' @param query Names to assign to query on output
+#' @param subj Names to assign to subject on output
 #' @param d_genomic boolean as to interpret third column as chromosome
 #'
-#' @return outputs a list of query and subject locations.
+#' @return List of query and subject locations.
 #'
 #' @seealso \code{\link{shared_coor}}
-#' @seealso \code{\link{GenomicRanges::GRanges}}
-#' @seealso \code{\link{IRanges::IRanges}}
-#' @seealso \code{\link{IRanges::findOverlaps}}
-#'
-#' @importFrom GenomicRanges GRanges
-#' @importFrom IRanges IRanges
-#' @importFrom IRanges findOverlaps
 #'
 #' @export
 
