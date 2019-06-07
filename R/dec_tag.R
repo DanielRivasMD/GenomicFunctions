@@ -1,30 +1,23 @@
 
-#dec_tag
-#' @title
-#'
+#' @title Tag Decoder
 #'
 #' @description
+#' \emph{dec_tag} decodes a numeric vector given a specified position \emph{f_dec} by digits as \emph{d_numerator}
 #'
+#' @param f_seq Numerical vector
+#' @param f_dec Position to decode
+#' @param d_numerator Digit position
 #'
-#' @section Warning:
-#'
-#'
-#' @param f_seq
-#'
-#' @param f_dec
-#'
-#' @param f_numerator
-#'
-#' @return
-#'
-#' @export
-#' @source
+#' @return Numerical vector of decoded values
 #'
 #' @examples
 #'
 
-dec_tag <- function(f_seq, f_dec, f_numerator = 100){
+	f_seq,
+	f_dec,
+	d_numerator = 100
+) {
 
-	f_seq <- (f_seq/f_dec/f_numerator)+0.0000001
-	return(floor((f_seq-floor(f_seq))*f_numerator))
+	f_seq <- (f_seq / f_dec / d_numerator) + 0.0000001
+	return(floor((f_seq - floor(f_seq)) * d_numerator))
 }

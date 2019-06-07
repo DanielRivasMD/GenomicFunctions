@@ -2,30 +2,23 @@
 % Please edit documentation in R/dec_tag.R
 \name{dec_tag}
 \alias{dec_tag}
-\title{}
-\source{
-
-}
+\title{Tag Decoder}
 \usage{
-dec_tag(f_seq, f_dec, f_numerator = 100)
+dec_tag(f_seq, f_dec, d_numerator = 100)
 }
 \arguments{
-\item{f_seq}{}
+\item{f_seq}{Numerical vector}
 
-\item{f_dec}{}
+\item{f_dec}{Position to decode}
 
-\item{f_numerator}{}
+\item{d_numerator}{Digit position}
 }
 \value{
-
+Numerical vector of decoded values
 }
 \description{
-
+\emph{dec_tag} decodes a numeric vector given a specified position \emph{f_dec} by digits as \emph{d_numerator}
 }
-\section{Warning}{
-
-}
-
 \examples{
 
 }
