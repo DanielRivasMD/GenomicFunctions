@@ -27,15 +27,8 @@ unique_coor <- function(
 	d_genomic = FALSE
 ) {
 
-	if ( d_genomic == FALSE ) {
-		#
-		f_query_ranges <- IRanges::IRanges(start = f_query[, 1], end = f_query[, 2])
-		f_subj_ranges <- IRanges::IRanges(start = f_subj[, 1], end = f_subj[, 2])
-	}else{
-		#
-		f_query_ranges <- GenomicRanges::GRanges(seqnames = f_query[, 3], IRanges::IRanges(start = f_query[, 1], end = f_query[, 2]))
-		f_subj_ranges <- GenomicRanges::GRanges(seqnames = f_subj[, 3], IRanges::IRanges(start = f_subj[, 1], end = f_subj[, 2]))
-	}
+	f_query_ranges <- range_assembler(f_query, d_genom = d_genomic)
+	f_subj_ranges <- range_assembler(f_subj, d_genom = d_genomic)
 
 	f_query_subj <- as.data.frame(IRanges::findOverlaps(f_query_ranges, f_subj_ranges))
 	colnames(f_query_subj) <- c(query, subj)
