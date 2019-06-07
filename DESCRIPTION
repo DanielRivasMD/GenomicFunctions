@@ -2,11 +2,11 @@ Package: CopperGenomicFunctions
 Title: Compilation of R functions for Genomic Data
 Version: 0.0.3
 Authors@R:
-  person(given = "Daniel",
-    family = "Rivas",
-    role = c("aut", "cre"),
-    email = "daniel.rivas@imbim.uu.se")
-Description: This package contains multiple functions for analysis of Genomic Data
+    person(given = "Daniel",
+        family = "Rivas",
+        role = c("aut", "cre"),
+        email = "daniel.rivas@imbim.uu.se")
+Description: This package contains multiple functions for analysis of Genomic Data.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
