@@ -64,10 +64,10 @@ peak_iden_seq <- function(
 
 	f_peak_no <- ceiling(which(!is.na(f_mat_match)) / max(f_peak_length))
 	f_seq_df[which(f_seq_df$seq_max >= d_threshold), "peak_no"] <- f_peak_no
-	peak_feat <- aggregate(seq_max ~ peak_no, data = f_seq_df, FUN = max)
-	peak_feat$seq_min <- aggregate(seq_max ~ peak_no, data = f_seq_df, FUN = min)[, "seq_max"]
-	peak_feat$seq_mean <- aggregate(seq_max ~ peak_no, data = f_seq_df, FUN = mean)[, "seq_max"]
- 	peak_feat$seq_sum <- aggregate(seq_max ~ peak_no, data = f_seq_df, FUN = sum)[, "seq_max"]
+	peak_feat <- stats::aggregate(seq_max ~ peak_no, data = f_seq_df, FUN = max)
+	peak_feat$seq_min <- stats::aggregate(seq_max ~ peak_no, data = f_seq_df, FUN = min)[, "seq_max"]
+	peak_feat$seq_mean <- stats::aggregate(seq_max ~ peak_no, data = f_seq_df, FUN = mean)[, "seq_max"]
+ 	peak_feat$seq_sum <- stats::aggregate(seq_max ~ peak_no, data = f_seq_df, FUN = sum)[, "seq_max"]
 	peak_feat$lower_lim_ix <- f_lower_lim_ix
 	peak_feat$upper_lim_ix <- f_upper_lim_ix
 	peak_feat$peak_length_ix <- f_peak_length
