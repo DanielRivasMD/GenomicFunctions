@@ -2,30 +2,31 @@
 % Please edit documentation in R/peak_diff.R
 \name{peak_diff}
 \alias{peak_diff}
-\title{}
-\source{
-
-}
+\title{peak_diff}
 \usage{
 peak_diff(f_x, f_y, f_data)
 }
 \arguments{
-\item{f_x}{}
+\item{f_x}{f_x}
 
-\item{f_y}{}
+\item{f_y}{f_y}
 
-\item{f_data}{}
+\item{f_data}{f_data}
 }
 \value{
-
+return
 }
 \description{
-
+\emph{peak_diff}
 }
-\section{Warning}{
+\seealso{
+\code{\link{locus_diff}}
 
-}
+\code{\link{h_clust}}
 
-\examples{
+\code{\link{peak_iden}}
 
+\code{\link{unique_coor}}
+
+\code{\link{shared_coor}}
 }

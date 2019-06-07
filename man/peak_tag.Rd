@@ -2,28 +2,18 @@
 % Please edit documentation in R/peak_tag.R
 \name{peak_tag}
 \alias{peak_tag}
-\title{}
-\source{
-
-}
+\title{peak_tag}
 \usage{
 peak_tag(f_df_pos, f_seq_dist)
 }
 \arguments{
-\item{f_df_pos}{}
+\item{f_df_pos}{f_df_pos}
 
-\item{f_seq_dist}{}
+\item{f_seq_dist}{f_seq_dist}
 }
 \value{
-
+return
 }
 \description{
-
-}
-\section{Warning}{
-
-}
-
-\examples{
-
+\emph{peak_tag}
 }
