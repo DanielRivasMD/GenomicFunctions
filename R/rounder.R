@@ -1,28 +1,24 @@
 
-#rounder
-#' @title
-#' Rounder
+#' @title Rounder
 #'
 #' @description
-#' Rounds numbers 'f_seq' to ceiling given a factor 'f_round_factor'
+#' Rounds numbers \emph{'f_seq'} to ceiling given a factor \emph{'f_round_factor'}
 #'
-#' @section Warning:
+#' @param f_seq Numerical vector
+#' @param f_round_factor Rounding factor
 #'
-#'
-#' @param f_seq
-#' Vector of numbers
-#' @param f_round_factor
-#' Rounding factor
-#' @return
-#' Returns a vector of numbers
-#' @export
-#' @source
+#' @return Numerical vector
 #'
 #' @examples
 #' rounder(27, 10)
 #' rounder(341:710, 20)
+#' @export
 
-rounder <- function(f_seq, f_round_factor){
+rounder <- function(
 
-	return(ceiling((f_seq)/f_round_factor)*f_round_factor)
+	f_seq,
+	f_round_factor
+) {
+
+	return(ceiling((f_seq) / f_round_factor) * f_round_factor)
 }

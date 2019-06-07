@@ -3,27 +3,20 @@
 \name{rounder}
 \alias{rounder}
 \title{Rounder}
-\source{
-
-}
 \usage{
 rounder(f_seq, f_round_factor)
 }
 \arguments{
-\item{f_seq}{Vector of numbers}
+\item{f_seq}{Numerical vector}
 
 \item{f_round_factor}{Rounding factor}
 }
 \value{
-Returns a vector of numbers
+Numerical vector
 }
 \description{
-Rounds numbers 'f_seq' to ceiling given a factor 'f_round_factor'
+Rounds numbers \emph{'f_seq'} to ceiling given a factor \emph{'f_round_factor'}
 }
-\section{Warning}{
-
-}
-
 \examples{
 rounder(27, 10)
 rounder(341:710, 20)
