@@ -1,16 +1,16 @@
 
-#' @title peak_iden_seq
+#' @title Peak Identifier Plus
 #'
 #' @description
 #' Identifies peaks in a vector of number above a defined threshold \emph{'d_threshold'}.
 #' Additionally, calculates \emph{'min'}, \emph{'mean'}, \emph{'sum'} and coordinates in indixes (ix) and nucleotides (nt) given \emph{'d_bin_size'} and \emph{'d_bin_overlaps'} assuming it is dealing with overlaping windows.
 #'
-#' @param f_seq Vector of numbers
-#' @param d_threshold Threshold for peak identification. Default = 1
-#' @param d_bin_size Defines bin size assuming \emph{f_seq} is a vector of sliding windows. Default = \emph{bin_size}
-#' @param d_bin_overlaps Defines bin overlaps assuming \emph{f_seq} is a vector of sliding windows. Default = \emph{bin_overlaps}
+#' @inheritParams peak_iden
 #'
-#' @return Returns a data.frame with following columns: \enumerate{
+#' @param d_bin_size Defines bin size assuming \emph{f_seq} is a vector of sliding windows. \strong{Default = 500}
+#' @param d_bin_overlaps Defines bin overlaps assuming \emph{f_seq} is a vector of sliding windows. \strong{Default = 10}
+#'
+#' @return data.frame with following columns: \enumerate{
 #' \item peak_no
 #' \item seq_max
 #' \item seq_min
@@ -24,7 +24,7 @@
 #'
 #' @seealso \code{\link{peak_iden}}
 #' @examples
-#' x <- sample(0:5, 100, replace = T, prob = c(5, rep(1, 5)))
+#' x <- sample(0:5, 100, replace = TRUE, prob = c(5, rep(1, 5)))
 #' peak_iden_seq(
 #'	x,
 #'	d_threshold = 1,
@@ -42,8 +42,8 @@ peak_iden_seq <- function(
 ) {
 
 	if ( is.null(d_threshold) ) d_threshold = 1
-	if ( is.null(d_bin_size) ) d_bin_size = bin_size
-	if ( is.null(d_bin_overlaps) ) d_bin_overlaps = bin_overlaps
+	if ( is.null(d_bin_size) ) d_bin_size = 500
+	if ( is.null(d_bin_overlaps) ) d_bin_overlaps = 10
 
 	f_seq_df <- data.frame(seq_max = f_seq, peak_no = NA)
 	f_seq <- c(0, f_seq, 0)

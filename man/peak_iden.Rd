@@ -3,28 +3,29 @@
 \name{peak_iden}
 \alias{peak_iden}
 \title{Peak Identifier}
-\source{
-
-}
 \usage{
-peak_iden(f_seq, f_threshold = NULL)
+peak_iden(f_seq, d_threshold = NULL)
 }
 \arguments{
-\item{f_seq}{Vector of numbers}
+\item{f_seq}{Numeric vector}
 
-\item{f_threshold}{Threshold for peak identification. Default = 1}
+\item{d_threshold}{Threshold for peak identification. \strong{Default = 1}}
 }
 \value{
-Returns a data.frame with following columns: "peak_no", "lower_lim_ix", "upper_lim_ix", "peak_length_ix"
+data.frame with following columns: \enumerate{
+\item peak_no
+\item lower_lim_ix
+\item upper_lim_ix
+\item peak_length_ix
+}
 }
 \description{
-Identifies peaks in a vector of number above a defined threshold 'f_threshold'
+Identifies peaks in a vector of number above a defined threshold \emph{'d_threshold'}
 }
-\section{Warning}{
-
-}
-
 \examples{
-x <- sample(0:5, 100, replace=T, prob = c(5, rep(1, 5)))
-peak_iden_seq(x)
+x <- sample(0:5, 100, replace = TRUE, prob = c(5, rep(1, 5)))
+peak_iden(x)
+}
+\seealso{
+\code{\link{peak_iden_seq}}
 }

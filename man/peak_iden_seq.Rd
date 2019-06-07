@@ -2,22 +2,22 @@
 % Please edit documentation in R/peak_iden_seq.R
 \name{peak_iden_seq}
 \alias{peak_iden_seq}
-\title{peak_iden_seq}
+\title{Peak Identifier Plus}
 \usage{
 peak_iden_seq(f_seq, d_threshold = NULL, d_bin_size = NULL,
   d_bin_overlaps = NULL)
 }
 \arguments{
-\item{f_seq}{Vector of numbers}
+\item{f_seq}{Numeric vector}
 
-\item{d_threshold}{Threshold for peak identification. Default = 1}
+\item{d_threshold}{Threshold for peak identification. \strong{Default = 1}}
 
-\item{d_bin_size}{Defines bin size assuming \emph{f_seq} is a vector of sliding windows. Default = \emph{bin_size}}
+\item{d_bin_size}{Defines bin size assuming \emph{f_seq} is a vector of sliding windows. \strong{Default = 500}}
 
-\item{d_bin_overlaps}{Defines bin overlaps assuming \emph{f_seq} is a vector of sliding windows. Default = \emph{bin_overlaps}}
+\item{d_bin_overlaps}{Defines bin overlaps assuming \emph{f_seq} is a vector of sliding windows. \strong{Default = 10}}
 }
 \value{
-Returns a data.frame with following columns: \enumerate{
+data.frame with following columns: \enumerate{
 \item peak_no
 \item seq_max
 \item seq_min
@@ -34,7 +34,7 @@ Identifies peaks in a vector of number above a defined threshold \emph{'d_thresh
 Additionally, calculates \emph{'min'}, \emph{'mean'}, \emph{'sum'} and coordinates in indixes (ix) and nucleotides (nt) given \emph{'d_bin_size'} and \emph{'d_bin_overlaps'} assuming it is dealing with overlaping windows.
 }
 \examples{
-x <- sample(0:5, 100, replace = T, prob = c(5, rep(1, 5)))
+x <- sample(0:5, 100, replace = TRUE, prob = c(5, rep(1, 5)))
 peak_iden_seq(
 x,
 d_threshold = 1,
