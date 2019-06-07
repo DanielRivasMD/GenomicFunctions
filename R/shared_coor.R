@@ -1,27 +1,16 @@
 
-#' @title shared_coor
+#' @title Shared Coordinate
 #'
 #' @description
 #' \emph{shared_coor} takes two data.frames with start (first column) and end (second column) coordinates, and finds overlaps.
 #' \emph{d_genomic} option ( default = \emph{FALSE} ) if non-genomic coordinates, otherwise chromosome information must be entered in column 3.
 #' requires \strong{GenomicRanges} (built-in).
 #'
-#' @param f_query data.frame interpreted as query with specified format
-#' @param f_subj data.frame interpreted as subject with specified format
-#' @param query names to assign to query on output
-#' @param subj names to assign to subject on output
-#' @param d_genomic boolean as to interpret third column as chromosome
+#' @inheritParams unique_coor
 #'
-#' @return outputs a list of query and subject locations.
+#' @return List of query and subject locations.
 #'
 #' @seealso \code{\link{unique_coor}}
-#' @seealso \code{\link{GenomicRanges::GRanges}}
-#' @seealso \code{\link{IRanges::IRanges}}
-#' @seealso \code{\link{IRanges::findOverlaps}}
-#'
-#' @importFrom GenomicRanges GRanges
-#' @importFrom IRanges IRanges
-#' @importFrom IRanges findOverlaps
 #'
 #' @export
 
