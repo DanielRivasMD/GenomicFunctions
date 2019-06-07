@@ -2,28 +2,18 @@
 % Please edit documentation in R/most_comn.R
 \name{most_comn}
 \alias{most_comn}
-\title{}
-\source{
-
-}
+\title{Most Common}
 \usage{
-most_comn(f_x, na_rm = F)
+most_comn(f_x, na_rm = FALSE)
 }
 \arguments{
-\item{f_x}{}
+\item{f_x}{input}
 
-\item{na_rm}{}
+\item{na_rm}{boolean}
 }
 \value{
-
+return
 }
 \description{
-
-}
-\section{Warning}{
-
-}
-
-\examples{
-
+\emph{most_comn}
 }

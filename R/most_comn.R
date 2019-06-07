@@ -1,29 +1,23 @@
 
-#most_comn
-#' @title
-#'
+#' @title Most Common
 #'
 #' @description
+#' \emph{most_comn}
 #'
+#' @param f_x input
+#' @param na_rm boolean
 #'
-#' @section Warning:
-#'
-#'
-#' @param f_x
-#'
-#' @param na_rm
-#'
-#' @return
+#' @return return
 #'
 #' @export
-#' @source
-#'
-#' @examples
-#'
 
-most_comn <- function(f_x, na_rm = F){
+most_comn <- function(
 
-	if(na_rm == T){
+	f_x,
+	na_rm = FALSE
+) {
+
+	if(na_rm == TRUE){
 
 		f_x <- f_x[!is.na(f_x)]
 	}
