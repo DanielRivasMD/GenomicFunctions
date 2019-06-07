@@ -2,26 +2,25 @@
 % Please edit documentation in R/tb_collector.R
 \name{tb_collector}
 \alias{tb_collector}
-\title{}
-\source{
-
-}
+\title{tb_collector}
 \usage{
 tb_collector(f_data, f_ix, f_exp_val_range, f_val = NULL)
 }
 \arguments{
-\item{f_data}{}
+\item{f_data}{f_data}
+
+\item{f_ix}{f_ix}
+
+\item{f_exp_val_range}{expected table range}
+
+\item{f_val}{f_val}
 }
 \value{
-
+return
 }
 \description{
-Collects vector data into a table of standard format defined by expected values
+\emph{tb_collector} collects vector data into a table of standard format defined by expected values
 }
-\section{Warning}{
-
-}
-
-\examples{
-
+\seealso{
+\code{\link{concat_ls}}
 }
