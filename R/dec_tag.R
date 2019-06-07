@@ -11,7 +11,11 @@
 #' @return Numerical vector of decoded values
 #'
 #' @examples
-#'
+#' x <- c(10.34, 435.5002, 436.7879)
+#' dec_tag(x, 0.01)
+#' @export
+
+dec_tag <- function(
 
 	f_seq,
 	f_dec,

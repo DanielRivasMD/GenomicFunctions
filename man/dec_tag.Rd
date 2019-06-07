@@ -20,5 +20,6 @@ Numerical vector of decoded values
 \emph{dec_tag} decodes a numeric vector given a specified position \emph{f_dec} by digits as \emph{d_numerator}
 }
 \examples{
-
+x <- c(10.34, 435.5002, 436.7879)
+dec_tag(x, 0.01)
 }
