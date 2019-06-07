@@ -1,35 +1,27 @@
 
-#mini_junc_link
-#' @title
-#'
+#' @title Mini Junction Linker
 #'
 #' @description
+#' \emph{mini_junc_link}
 #'
+#' @param f_df data.frame
+#' @param f_upp_col Column interpreted as upstream
+#' @param f_down_col Column interpreted as downstream
+#' @param f_pos_col Positions column
+#' @param f_thres Threshold
 #'
-#' @section Warning:
-#'
-#'
-#' @param f_df
-#'
-#' @param f_upp_col
-#'
-#' @param f_down_col
-#'
-#' @param f_pos_col
-#'
-#' @param f_thres
-#'
-#' @param f_chrom_col
-#'
-#' @return
+#' @return return
 #'
 #' @export
-#' @source
-#'
-#' @examples
-#'
 
-mini_junc_link <- function(f_df, f_upp_col, f_down_col, f_pos_col, f_thres=1, f_chrom_col=NULL){
+mini_junc_link <- function(
+
+	f_df,
+	f_upp_col,
+	f_down_col,
+	f_pos_col,
+	f_thres = 1
+) {
 
 	f_tmp_df <- f_df
 	f_tmp_df <- f_tmp_df[which(f_tmp_df[, f_upp_col] >= 1 | f_tmp_df[, f_down_col] >= 1), c(f_pos_col, f_upp_col, f_down_col)]

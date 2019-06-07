@@ -2,37 +2,24 @@
 % Please edit documentation in R/mini_junc_link.R
 \name{mini_junc_link}
 \alias{mini_junc_link}
-\title{}
-\source{
-
-}
+\title{Mini Junction Linker}
 \usage{
-mini_junc_link(f_df, f_upp_col, f_down_col, f_pos_col, f_thres = 1,
-  f_chrom_col = NULL)
+mini_junc_link(f_df, f_upp_col, f_down_col, f_pos_col, f_thres = 1)
 }
 \arguments{
-\item{f_df}{}
+\item{f_df}{data.frame}
 
-\item{f_upp_col}{}
+\item{f_upp_col}{Column interpreted as upstream}
 
-\item{f_down_col}{}
+\item{f_down_col}{Column interpreted as downstream}
 
-\item{f_pos_col}{}
+\item{f_pos_col}{Positions column}
 
-\item{f_thres}{}
-
-\item{f_chrom_col}{}
+\item{f_thres}{Threshold}
 }
 \value{
-
+return
 }
 \description{
-
-}
-\section{Warning}{
-
-}
-
-\examples{
-
+\emph{mini_junc_link}
 }
