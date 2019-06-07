@@ -2,28 +2,21 @@
 % Please edit documentation in R/class_strrugle_to_character.R
 \name{class_strrugle_to_character}
 \alias{class_strrugle_to_character}
-\title{}
-\source{
-
-}
+\title{class_strrugle_to_character}
 \usage{
 class_strrugle_to_character(f_df, f_class)
 }
 \arguments{
-\item{f_df}{}
+\item{f_df}{f_df}
 
-\item{f_class}{}
+\item{f_class}{f_class}
 }
 \value{
-
+return
 }
 \description{
-
+\emph{class_strrugle_to_character}
 }
-\section{Warning}{
-
-}
-
-\examples{
-
+\seealso{
+\code{\link{class_strrugle_to_numeric}}
 }
