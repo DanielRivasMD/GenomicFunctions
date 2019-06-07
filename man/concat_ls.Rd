@@ -2,26 +2,16 @@
 % Please edit documentation in R/concat_ls.R
 \name{concat_ls}
 \alias{concat_ls}
-\title{}
-\source{
-
-}
+\title{Concatenate List}
 \usage{
 concat_ls(f_data)
 }
 \arguments{
-\item{f_data}{}
+\item{f_data}{List of elements}
 }
 \value{
-
+Concataned element of the same class as input
 }
 \description{
-
-}
-\section{Warning}{
-
-}
-
-\examples{
-
+\emph{concat_ls} inputs a list of elements and concatenates them
 }
