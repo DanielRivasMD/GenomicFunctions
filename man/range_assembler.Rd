@@ -4,12 +4,12 @@
 \alias{range_assembler}
 \title{Range Assembler}
 \usage{
-range_assembler(f_data, d_genom = FALSE)
+range_assembler(f_data, b_genom = TRUE)
 }
 \arguments{
 \item{f_data}{data.frame to be transform. Must be formated as: ranges start, ranges end and seqnames}
 
-\item{d_genom}{boolean to set if chromosome values are set. \strong{Default = FALSE}}
+\item{b_genom}{boolean to set if chromosome values are set}
 }
 \value{
 GenomicRanges object
