@@ -23,8 +23,8 @@ shared_coor <- function(
 	d_genomic = FALSE
 ) {
 
-	f_query_ranges <- range_assembler(f_query, d_genom = d_genomic)
-	f_subj_ranges <- range_assembler(f_subj, d_genom = d_genomic)
+	f_query_ranges <- range_assembler(f_query, b_genom = d_genomic)
+	f_subj_ranges <- range_assembler(f_subj, b_genom = d_genomic)
 
 	f_query_subj <- as.data.frame(IRanges::findOverlaps(f_query_ranges, f_subj_ranges))
 	colnames(f_query_subj) <- c(query, subj)
