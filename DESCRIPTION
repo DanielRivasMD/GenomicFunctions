@@ -1,4 +1,4 @@
-Package: CopperGenomicFunctions
+Package: GenomicFunctions
 Title: Compilation of R functions for Genomic Data
 Version: 0.1.2
 Authors@R:
