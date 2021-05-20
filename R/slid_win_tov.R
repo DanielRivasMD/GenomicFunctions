@@ -2,37 +2,37 @@
 #' @title Window Slider with Table Overlaps
 #'
 #' @description
-#' Takes in a numerical vector \emph{'f_seqs'} and outputs their positions assuming \emph{'d_bin_size'} and \emph{'d_bin_overlap'}
+#' Takes in a numerical vector \emph{'fSeqs'} and outputs their positions assuming \emph{'dBinSize'} and \emph{'dBinOverlap'}
 #'
-#' @inheritParams slid_win_ov
+#' @inheritParams slidWinOv
 #'
 #' @return Table with overlap indexes
 #'
-#' @seealso \code{\link{slid_win}}
+#' @seealso \code{\link{slidWin}}
 #'
 #' @section Warning:
-#' \emph{'slid_win_ov'} uses \emph{'slid_win'} to determine the window sliding
+#' \emph{'slidWinOv'} uses \emph{'slidWin'} to determine the window sliding
 #'
 #' @examples
-#' slid_win_tov(1:100, 25, 5)
+#' slidWinTov(1:100, 25, 5)
 #' @export
 
-slid_win_tov <- function(
+slidWinTov <- function(
 
-	f_seq,
-	d_bin_size = 500,
-	d_bin_overlap = 10
+  fSeq,
+  dBinSize = 500,
+  dBinOverlap = 10
 ) {
 
-	f_hit_ls <- list()
-	#
-	for(f_which_over in 1:d_bin_overlap){
-		#
-		f_step_size <- d_bin_size * ((f_which_over-1) / d_bin_overlap)
-		f_seqs <- f_seq + f_step_size
-		f_hit_table <- table(slid_win(f_seqs, d_bin_size) - f_step_size)
-		f_hit_ls[[f_which_over]] <- f_hit_table
-	}
+  fHitLs <- list()
+  #
+  for(fWhichOver in 1:dBinOverlap){
+  #
+  fStepSize <- dBinSize * ((fWhichOver-1) / dBinOverlap)
+  fSeqs <- fSeq + fStepSize
+  fHitTable <- table(slidWin(fSeqs, dBinSize) - fStepSize)
+  fHitLs[[fWhichOver]] <- fHitTable
+  }
 
-	return(f_hit_ls)
+  return(fHitLs)
 }

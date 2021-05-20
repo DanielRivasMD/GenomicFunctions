@@ -2,10 +2,10 @@
 #' @title Rounder
 #'
 #' @description
-#' Rounds numbers \emph{'f_seq'} to ceiling given a factor \emph{'f_round_factor'}
+#' Rounds numbers \emph{'fSeq'} to ceiling given a factor \emph{'fRoundFactor'}
 #'
-#' @param f_seq Numerical vector
-#' @param f_round_factor Rounding factor
+#' @param fSeq Numerical vector
+#' @param fRoundFactor Rounding factor
 #'
 #' @return Numerical vector
 #'
@@ -16,9 +16,9 @@
 
 rounder <- function(
 
-	f_seq,
-	f_round_factor
+  fSeq,
+  fRoundFactor
 ) {
 
-	return(ceiling((f_seq) / f_round_factor) * f_round_factor)
+  return(ceiling((fSeq) / fRoundFactor) * fRoundFactor)
 }

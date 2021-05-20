@@ -1,31 +1,31 @@
 
-#' @title peak_diff
+#' @title peakDiff
 #'
 #' @description
-#' \emph{peak_diff}
+#' \emph{peakDiff}
 #'
-#' @inheritParams locus_diff
+#' @inheritParams locusDiff
 #'
 #' @return return
 #'
-#' @seealso \code{\link{locus_diff}}
-#' @seealso \code{\link{h_clust}}
-#' @seealso \code{\link{peak_iden}}
-#' @seealso \code{\link{unique_coor}}
-#' @seealso \code{\link{shared_coor}}
+#' @seealso \code{\link{locusDiff}}
+#' @seealso \code{\link{hClust}}
+#' @seealso \code{\link{peakIden}}
+#' @seealso \code{\link{uniqueCoor}}
+#' @seealso \code{\link{sharedCoor}}
 #' @export
 
-peak_diff <- function(
+peakDiff <- function(
 
-	f_x,
-	f_y,
-	f_data
+  fX,
+  fY,
+  fData
 ) {
 
-	p_x <- peak_iden(f_data[, f_x])
-	p_y <- peak_iden(f_data[, f_y])
-	u_data <- unique_coor(p_x[, c("lower_lim_ix", "upper_lim_ix")], p_y[, c("lower_lim_ix", "upper_lim_ix")], "p_x", "p_y")
-	out_val <- dim(u_data$p_x)[1] + dim(u_data$p_y)[1]
+  pX <- peakIden(fData[, fX])
+  pY <- peakIden(fData[, fY])
+  uData <- uniqueCoor(pX[, c("lowerLimIx", "upperLimIx")], pY[, c("lowerLimIx", "upperLimIx")], "pX", "pY")
+  outVal <- dim(uData$pX)[1] + dim(uData$pY)[1]
 
-	return(out_val)
+  return(outVal)
 }

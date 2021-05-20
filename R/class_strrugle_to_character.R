@@ -1,23 +1,23 @@
 
-#' @title class_strrugle_to_character
+#' @title classStrrugleCharacter
 #'
 #' @description
-#' \emph{class_strrugle_to_character}
+#' \emph{classStrrugleCharacter}
 #'
-#' @param f_df f_df
-#' @param f_class f_class
+#' @param fDf fDf
+#' @param fClass fClass
 #'
 #' @return return
 #'
-#' @seealso \code{\link{class_strrugle_to_numeric}}
+#' @seealso \code{\link{classStrrugleNumeric}}
 #' @export
 
-class_strrugle_to_character <- function(
+classStrrugleCharacter <- function(
 
-	f_df,
-	f_class
+  fDf,
+  fClass
 ) {
 
-	for(i in which(sapply(f_df, class) == f_class)) f_df[[i]] = as.character(f_df[[i]])
-	return(f_df)
+  for(i in which(sapply(fDf, class) == fClass)) fDf[[i]] = as.character(fDf[[i]])
+  return(fDf)
 }

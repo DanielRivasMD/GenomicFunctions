@@ -1,22 +1,22 @@
 
-#' @title class_strrugle_to_numeric
+#' @title classStrrugleNumeric
 #'
 #' @description
-#' \emph{class_strrugle_to_numeric}
+#' \emph{classStrrugleNumeric}
 #'
-#' @inheritParams class_strrugle_to_character
+#' @inheritParams classStrrugleCharacter
 #'
 #' @return return
 #'
-#' @seealso \code{\link{class_strrugle_to_character}}
+#' @seealso \code{\link{classStrrugleCharacter}}
 #' @export
 
-class_strrugle_to_numeric <- function(
+classStrrugleNumeric <- function(
 
-	f_df,
-	f_class
+  fDf,
+  fClass
 ) {
 
-	for(i in which(sapply(f_df, class) == f_class)) f_df[[i]] = as.numeric(f_df[[i]])
-	return(f_df)
+  for(i in which(sapply(fDf, class) == fClass)) fDf[[i]] = as.numeric(fDf[[i]])
+  return(fDf)
 }

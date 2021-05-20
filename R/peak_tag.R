@@ -1,24 +1,24 @@
 
-#' @title peak_tag
+#' @title peakTag
 #'
 #' @description
-#' \emph{peak_tag}
+#' \emph{peakTag}
 #'
-#' @param f_df_pos f_df_pos
-#' @param f_seq_dist f_seq_dist
+#' @param fDfPos fDfPos
+#' @param fSeqDist fSeqDist
 #'
 #' @return return
 #'
 #' @export
 
-peak_tag <- function(
+peakTag <- function(
 
-	f_df_pos,
-	f_seq_dist
+  fDfPos,
+  fSeqDist
 ) {
 
-	out_val <- data.frame(max_ix=which(c(f_df_pos[-1], 0) - f_df_pos != f_seq_dist))
-	out_val$min_ix <- c(1, out_val$max_ix[-length(out_val$max_ix)] + 1)
+  outVal <- data.frame(maxIx=which(c(fDfPos[-1], 0) - fDfPos != fSeqDist))
+  outVal$minIx <- c(1, outVal$maxIx[-length(outVal$maxIx)] + 1)
 
-	return(out_val)
+  return(outVal)
 }

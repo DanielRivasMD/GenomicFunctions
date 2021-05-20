@@ -2,36 +2,36 @@
 #' @title List Comparer
 #'
 #' @description
-#' Compare decoded lists \emph{f_vec1} & \emph{f_vec2}
+#' Compare decoded lists \emph{fVec1} & \emph{fVec2}
 #'
-#' @param f_vec1 vector of decoded values
-#' @param f_vec2 vector of decoded values
-#' @param d_selector selector. \strong{Default = 0}
+#' @param fVec1 vector of decoded values
+#' @param fVec2 vector of decoded values
+#' @param dSelector selector. \strong{Default = 0}
 #'
 #' @return vector of overlaping positions
 #'
 #' @export
 
-dec_list_compar <- function(
+decListCompar <- function(
 
-	f_vec1,
-	f_vec2,
-	d_selector = 0
+  fVec1,
+  fVec2,
+  dSelector = 0
 ) {
 
-	f_vec1 <- f_vec1 * 10
-	f_vec_sum <- f_vec1 + f_vec2
+  fVec1 <- fVec1 * 10
+  fVecSum <- fVec1 + fVec2
 
-	if ( d_selector == 0 ) {
-		#
-		return( which(f_vec_sum == 11) )
+  if ( dSelector == 0 ) {
+  #
+  return( which(fVecSum == 11) )
 
-	} else if ( d_selector == 1 ) {
-		#
-		return( which(f_vec_sum == 10) )
+  } else if ( dSelector == 1 ) {
+  #
+  return( which(fVecSum == 10) )
 
-	} else if ( d_selector == 2 ) {
-		#
-		return( which(f_vec_sum == 1) )
-	}
+  } else if ( dSelector == 2 ) {
+  #
+  return( which(fVecSum == 1) )
+  }
 }

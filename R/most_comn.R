@@ -2,26 +2,26 @@
 #' @title Most Common
 #'
 #' @description
-#' \emph{most_comn}
+#' \emph{mostComn}
 #'
-#' @param f_x input
-#' @param na_rm boolean
+#' @param fX input
+#' @param naRm boolean
 #'
 #' @return return
 #'
 #' @export
 
-most_comn <- function(
+mostComn <- function(
 
-	f_x,
-	na_rm = FALSE
+  fX,
+  naRm = FALSE
 ) {
 
-	if(na_rm == TRUE){
+  if(naRm == TRUE){
 
-		f_x <- f_x[!is.na(f_x)]
-	}
+  fX <- fX[!is.na(fX)]
+  }
 
-	f_ux <- unique(f_x)
-	f_ux[which.max(tabulate(match(f_x, f_ux)))]
+  fUx <- unique(fX)
+  fUx[which.max(tabulate(match(fX, fUx)))]
 }

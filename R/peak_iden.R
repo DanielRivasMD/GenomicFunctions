@@ -2,37 +2,37 @@
 #' @title Peak Identifier
 #'
 #' @description
-#' Identifies peaks in a vector of number above a defined threshold \emph{'d_threshold'}
+#' Identifies peaks in a vector of number above a defined threshold \emph{'dThreshold'}
 #'
-#' @param f_seq Numeric vector
-#' @param d_threshold Threshold for peak identification. \strong{Default = 1}
+#' @param fSeq Numeric vector
+#' @param dThreshold Threshold for peak identification. \strong{Default = 1}
 #'
 #' @return data.frame with following columns: \enumerate{
-#' \item peak_no
-#' \item lower_lim_ix
-#' \item upper_lim_ix
-#' \item peak_length_ix
+#' \item peakNo
+#' \item lowerLimIx
+#' \item upperLimIx
+#' \item peakLengthIx
 #' }
 #'
-#' @seealso \code{\link{peak_iden_seq}}
+#' @seealso \code{\link{peakIdenSeq}}
 #' @examples
 #' x <- sample(0:5, 100, replace = TRUE, prob = c(5, rep(1, 5)))
-#' peak_iden(x)
+#' peakIden(x)
 #' @export
 
-peak_iden <- function(
+peakIden <- function(
 
-	f_seq,
-	d_threshold = NULL
+  fSeq,
+  dThreshold = NULL
 ) {
 
-	if ( is.null(d_threshold) ) d_threshold = 1
-	f_seq <- c(0, f_seq, 0)
-	f_threseq <- which(f_seq >= d_threshold)
-	f_peak_length <- which(f_seq[f_threseq + 1]<d_threshold) - which(f_seq[f_threseq-1]<d_threshold) + 1
-	f_upper_lim_ix <- (f_threseq[cumsum(f_peak_length)]) - 1
-	f_lower_lim_ix <- f_upper_lim_ix - f_peak_length + 1
-	peak_feat <- data.frame(peak_no = seq_along(f_lower_lim_ix), lower_lim_ix = f_lower_lim_ix, upper_lim_ix = f_upper_lim_ix, peak_length_ix = f_peak_length)
+  if ( is.null(dThreshold) ) dThreshold <- 1
+  fSeq <- c(0, fSeq, 0)
+  fThreseq <- which(fSeq >= dThreshold)
+  fPeakLength <- which(fSeq[fThreseq + 1] < dThreshold) - which(fSeq[fThreseq-1] < dThreshold) + 1
+  fUpperLimIx <- (fThreseq[cumsum(fPeakLength)]) - 1
+  fLowerLimIx <- fUpperLimIx - fPeakLength + 1
+  peakFeat <- data.frame(peakNo = seqAlong(fLowerLimIx), lowerLimIx = fLowerLimIx, upperLimIx = fUpperLimIx, peakLengthIx = fPeakLength)
 
-	return(peak_feat)
+  return(peakFeat)
 }

@@ -1,19 +1,19 @@
 
-#' @title dup_finder
+#' @title dupFinder
 #'
 #' @description
-#' \emph{dup_finder}
+#' \emph{dupFinder}
 #'
-#' @param f_vec vector
+#' @param fVec vector
 #'
 #' @return return
 #'
 #' @export
 
-dup_finder <- function(
+dupFinder <- function(
 
-	f_vec
+  fVec
 ) {
 
-	return(duplicated(f_vec) | duplicated(f_vec, fromLast = TRUE))
+  return(duplicated(fVec) | duplicated(fVec, fromLast = TRUE))
 }

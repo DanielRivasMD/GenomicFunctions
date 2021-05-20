@@ -1,26 +1,26 @@
 
-#' @title locus_diff
+#' @title locusDiff
 #'
 #' @description
-#' \emph{locus_diff}
+#' \emph{locusDiff}
 #'
-#' @param f_x f_x
-#' @param f_y f_y
-#' @param f_data f_data
+#' @param fX fX
+#' @param fY fY
+#' @param fData fData
 #'
 #' @return return
 #'
-#' @seealso \code{\link{peak_diff}}
-#' @seealso \code{\link{h_clust}}
+#' @seealso \code{\link{peakDiff}}
+#' @seealso \code{\link{hClust}}
 #' @export
 
-locus_diff <- function(
+locusDiff <- function(
 
-	f_x,
-	f_y,
-	f_data
+  fX,
+  fY,
+  fData
 ) {
 
-	out_val <- sum(abs(f_data[, f_x] - f_data[, f_y]))
-	return(out_val)
+  outVal <- sum(abs(fData[, fX] - fData[, fY]))
+  return(outVal)
 }

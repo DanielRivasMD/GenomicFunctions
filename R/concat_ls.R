@@ -2,62 +2,47 @@
 #' @title Concatenate List
 #'
 #' @description
-#' \emph{concat_ls} inputs a list of elements and concatenates them
+#' \emph{concatLs} inputs a list of elements and concatenates them
 #'
-#' @param f_data List of elements
+#' @param fData List of elements
 #'
 #' @return Concataned element of the same class as input
 #'
 #' @export
 
-concat_ls <- function(
+concatLs <- function(
 
-	f_data
+  fData
 ) {
 
-	if ( "data.frame" %in% class(f_data[[1]]) | "matrix" %in% class(f_data[[1]]) ) {
-		#
-		for ( f_looping in 1:length(f_data) ) {
-			#
-			if ( f_looping == 1 ) {
-				#
-				f_array <- f_data[[f_looping]]
-			} else {
-				#
-				if ( dim(f_data[[f_looping]])[1] > 0 ) {
-					#
-					f_array[(1:dim(f_data[[f_looping]])[1])+dim(f_array)[1], ] <- f_data[[f_looping]]
-				}
-			}
-		}
-	} else {
-		#
-		for ( f_looping in 1:length(f_data) ) {
-			#
-			if ( f_looping == 1 ) {
-				#
-				if ( class(f_data[[f_looping]]) == "table" ) {
-					#
-					f_names <- names(f_data[[f_looping]])
-				}
-				f_array <- f_data[[f_looping]]
-				#
-			} else {
-				#
-				f_array[seq_along(f_data[[f_looping]])+length(f_array)] <- f_data[[f_looping]]
-				#
-				if ( class(f_data[[f_looping]]) == "table" ) {
-					#
-					f_names[seq_along(f_data[[f_looping]])+length(f_names)] <- names(f_data[[f_looping]])
-				}
-			}
-		}
-		#
-		if ( class(f_data[[f_looping]]) == "table" ) {
-			#
-			names(f_array) <- f_names
-		}
-	}
+  if ( "data.frame" %in% class(fData[[1]]) | "matrix" %in% class(fData[[1]]) ) {
+    for ( fLooping in 1:length(fData) ) {
+      if ( fLooping == 1 ) {
+        fArray <- fData[[fLooping]]
+      } else {
+      if ( dim(fData[[fLooping]])[1] > 0 ) {
+          fArray[(1:dim(fData[[fLooping]])[1])+dim(fArray)[1], ] <- fData[[fLooping]]
+        }
+      }
+    }
+  } else {
+    for ( fLooping in 1:length(fData) ) {
+      if ( fLooping == 1 ) {
+        if ( class(fData[[fLooping]]) == "table" ) {
+          fNames <- names(fData[[fLooping]])
+        }
+        fArray <- fData[[fLooping]]
+      } else {
+        fArray[seqAlong(fData[[fLooping]])+length(fArray)] <- fData[[fLooping]]
+        if ( class(fData[[fLooping]]) == "table" ) {
+          fNames[seqAlong(fData[[fLooping]])+length(fNames)] <- names(fData[[fLooping]])
+        }
+      }
+    }
+    if ( class(fData[[fLooping]]) == "table" ) {
+      names(fArray) <- fNames
+    }
+  }
 
-	return(f_array)
+  return(fArray)
 }

@@ -2,34 +2,34 @@
 #' @title Shared Coordinate
 #'
 #' @description
-#' \emph{shared_coor} takes two data.frames with start (first column) and end (second column) coordinates, and finds overlaps.
-#' \emph{d_genomic} option ( default = \emph{FALSE} ) if non-genomic coordinates, otherwise chromosome information must be entered in column 3.
+#' \emph{sharedCoor} takes two data.frames with start (first column) and end (second column) coordinates, and finds overlaps.
+#' \emph{dGenomic} option ( default = \emph{FALSE} ) if non-genomic coordinates, otherwise chromosome information must be entered in column 3.
 #' requires \strong{GenomicRanges} (built-in).
 #'
-#' @inheritParams unique_coor
+#' @inheritParams uniqueCoor
 #'
 #' @return List of query and subject locations.
 #'
-#' @seealso \code{\link{unique_coor}}
+#' @seealso \code{\link{uniqueCoor}}
 #'
 #' @export
 
-shared_coor <- function(
+sharedCoor <- function(
 
-	f_query,
-	f_subj,
-	query,
-	subj,
-	d_genomic = FALSE
+  fQuery,
+  fSubj,
+  query,
+  subj,
+  dGenomic = FALSE
 ) {
 
-	f_query_ranges <- range_assembler(f_query, b_genom = d_genomic)
-	f_subj_ranges <- range_assembler(f_subj, b_genom = d_genomic)
+  fQueryRanges <- rangeAssembler(fQuery, bGenom = dGenomic)
+  fSubjRanges <- rangeAssembler(fSubj, bGenom = dGenomic)
 
-	f_query_subj <- as.data.frame(IRanges::findOverlaps(f_query_ranges, f_subj_ranges))
-	colnames(f_query_subj) <- c(query, subj)
-	shared_pos_ls <- list(f_query[f_query_subj[, query], ], f_subj[f_query_subj[, subj], ])
-	names(shared_pos_ls) <- c(query, subj)
+  fQuerySubj <- as.data.frame(IRanges::findOverlaps(fQueryRanges, fSubjRanges))
+  colnames(fQuerySubj) <- c(query, subj)
+  sharedPosLs <- list(fQuery[fQuerySubj[, query], ], fSubj[fQuerySubj[, subj], ])
+  names(sharedPosLs) <- c(query, subj)
 
-	return(shared_pos_ls)
+  return(sharedPosLs)
 }
