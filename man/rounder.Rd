@@ -4,18 +4,18 @@
 \alias{rounder}
 \title{Rounder}
 \usage{
-rounder(f_seq, f_round_factor)
+rounder(fSeq, fRoundFactor)
 }
 \arguments{
-\item{f_seq}{Numerical vector}
+\item{fSeq}{Numerical vector}
 
-\item{f_round_factor}{Rounding factor}
+\item{fRoundFactor}{Rounding factor}
 }
 \value{
 Numerical vector
 }
 \description{
-Rounds numbers \emph{'f_seq'} to ceiling given a factor \emph{'f_round_factor'}
+Rounds numbers \emph{'fSeq'} to ceiling given a factor \emph{'fRoundFactor'}
 }
 \examples{
 rounder(27, 10)
