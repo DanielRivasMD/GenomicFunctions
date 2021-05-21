@@ -1,6 +1,6 @@
 Package: GenomicFunctions
 Title: Compilation of R functions for Genomic Data
-Version: 5.0
+Version: 5.1
 Authors@R:
     person(given = "Daniel",
         family = "Rivas",
