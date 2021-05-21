@@ -32,9 +32,9 @@ uniqueCoor <- function(
 
   fQuerySubj <- as.data.frame(IRanges::findOverlaps(fQueryRanges, fSubjRanges))
   colnames(fQuerySubj) <- c(query, subj)
-  fQueryMatch <- match(seqAlong(fQueryRanges), fQuerySubj[, query])
+  fQueryMatch <- match(seq_along(fQueryRanges), fQuerySubj[, query])
   uniquePosQuery <- fQuery[which(is.na(fQueryMatch)), ]
-  fSubjMatch <- match(seqAlong(fSubjRanges), fQuerySubj[, subj])
+  fSubjMatch <- match(seq_along(fSubjRanges), fQuerySubj[, subj])
   uniquePosSubj <- fSubj[which(is.na(fSubjMatch)), ]
   uniquePosLs <- list(uniquePosQuery, uniquePosSubj)
   names(uniquePosLs) <- c(query, subj)

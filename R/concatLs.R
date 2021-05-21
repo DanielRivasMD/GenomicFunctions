@@ -33,9 +33,9 @@ concatLs <- function(
         }
         fArray <- fData[[fLooping]]
       } else {
-        fArray[seqAlong(fData[[fLooping]])+length(fArray)] <- fData[[fLooping]]
+        fArray[seq_along(fData[[fLooping]])+length(fArray)] <- fData[[fLooping]]
         if ( class(fData[[fLooping]]) == "table" ) {
-          fNames[seqAlong(fData[[fLooping]])+length(fNames)] <- names(fData[[fLooping]])
+          fNames[seq_along(fData[[fLooping]])+length(fNames)] <- names(fData[[fLooping]])
         }
       }
     }

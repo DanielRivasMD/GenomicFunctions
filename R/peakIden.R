@@ -32,7 +32,7 @@ peakIden <- function(
   fPeakLength <- which(fSeq[fThreseq + 1] < dThreshold) - which(fSeq[fThreseq-1] < dThreshold) + 1
   fUpperLimIx <- (fThreseq[cumsum(fPeakLength)]) - 1
   fLowerLimIx <- fUpperLimIx - fPeakLength + 1
-  peakFeat <- data.frame(peakNo = seqAlong(fLowerLimIx), lowerLimIx = fLowerLimIx, upperLimIx = fUpperLimIx, peakLengthIx = fPeakLength)
+  peakFeat <- data.frame(peakNo = seq_along(fLowerLimIx), lowerLimIx = fLowerLimIx, upperLimIx = fUpperLimIx, peakLengthIx = fPeakLength)
 
   return(peakFeat)
 }
